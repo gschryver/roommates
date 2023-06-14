@@ -68,7 +68,7 @@ namespace Roommates
                         List<Roommate> roommates = roommateRepo.GetAll();
                         foreach (Roommate rm in roommates)
                         {
-                            Console.WriteLine($"{rm.FirstName} {rm.LastName} pays {rm.RentPortion}% of the rent.");
+                            Console.WriteLine($"{rm.FirstName} {rm.LastName} pays {rm.RentPortion}% of the rent. They live in {rm.Room.Name}.");
                         }
                         Console.Write("Press any key to continue");
                         Console.ReadKey();
