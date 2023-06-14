@@ -205,7 +205,17 @@ namespace Roommates
                         Console.WriteLine("The chore has been successfully assigned.");
                         Console.Write("Press any key to continue");
                         Console.ReadKey();
-                        break;   
+                        break;
+                    case ("Chore Counts"):
+                        Dictionary<string, int> choreCounts = choreRepo.GetChoreCountsByRoommate();
+
+                        foreach (KeyValuePair<string, int> cc in choreCounts)
+                        {
+                            Console.WriteLine($"{cc.Key} - {cc.Value}");
+                        }
+                        Console.Write("Press any key to continue");
+                        Console.ReadKey();
+                        break;
                     case ("Exit"):
                         runProgram = false;
                         break;
@@ -232,6 +242,7 @@ namespace Roommates
                 "Add a chore",
                 "Delete a chore",
                 "Assign a chore to a roommate",
+                "Chore Counts",
                 "Exit"
             };
 
